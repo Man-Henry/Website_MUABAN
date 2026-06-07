@@ -1,0 +1,120 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Base Styles ===== */
+@layer base {
+  html {
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface text-on-surface min-h-screen;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ===== Component Utilities ===== */
+@layer components {
+  /* Hide scrollbar utility */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Material Symbols filled variant */
+  .material-symbols-filled {
+    font-variation-settings: 'FILL' 1;
+  }
+
+  /* Focus ring utility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-fixed-dim focus:ring-offset-1;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+}
+
+/* ===== Animations ===== */
+@layer utilities {
+  /* Page transition */
+  .page-enter {
+    animation: pageEnter 0.3s ease-out;
+  }
+
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade in */
+  .fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Spinner rotation */
+  .spin-slow {
+    animation: spin 1.2s linear infinite;
+  }
+
+  /* Skeleton loading shimmer */
+  .skeleton {
+    @apply bg-surface-container-high rounded;
+    background: linear-gradient(
+      90deg,
+      theme('colors.surface-container-high') 25%,
+      theme('colors.surface-container-low') 50%,
+      theme('colors.surface-container-high') 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Toast slide in */
+  .animate-toast-in {
+    animation: toastIn 0.3s ease-out;
+  }
+
+  @keyframes toastIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+}
