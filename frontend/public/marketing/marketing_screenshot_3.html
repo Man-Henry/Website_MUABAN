@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Marketing Screenshot 3 – Sống Xanh Mỗi Ngày – Sustainable Exchange</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* === CANVAS — 9:19.5 portrait (1284 × 2778 conceptual, rendered at scaled size) === */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #0a0a0a;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .canvas {
+            position: relative;
+            width: 1284px;
+            height: 2778px;
+            overflow: hidden;
+            transform-origin: top center;
+            /* Scale down to fit viewport — adjust as needed */
+            transform: scale(0.34);
+            margin: -920px 0;
+        }
+
+        /* === BACKGROUND — Deep forest green to midnight gradient === */
+        .canvas-bg {
+            position: absolute;
+            inset: 0;
+            /* Luxurious multi-stop gradient: forest green → deep emerald → midnight navy-black */
+            background: 
+                radial-gradient(ellipse 120% 60% at 50% 35%, rgba(10,80,45,0.45) 0%, transparent 70%),
+                radial-gradient(ellipse 80% 50% at 30% 70%, rgba(6,55,35,0.3) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 75% 55%, rgba(0,40,50,0.25) 0%, transparent 55%),
+                linear-gradient(175deg, 
+                    #0d3d24 0%, 
+                    #0a3520 8%,
+                    #082d1c 18%,
+                    #062516 30%,
+                    #041e12 42%,
+                    #03170e 55%,
+                    #02110b 65%,
+                    #010d09 75%,
+                    #010a08 82%,
+                    #000807 90%,
+                    #000506 100%
+                );
+            z-index: 0;
+        }
+
+        /* Subtle noise/grain texture overlay */
+        .canvas-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            pointer-events: none;
+        }
+
+        /* Subtle ambient light glow top center */
+        .canvas-glow-top {
+            position: absolute;
+            top: -5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(30,120,70,0.18) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Subtle glow behind phone */
+        .canvas-glow-phone {
+            position: absolute;
+            top: 38%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 1200px;
+            background: radial-gradient(ellipse, rgba(16,133,77,0.10) 0%, transparent 65%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* === HEADLINE — Top 20% === */
+        .headline-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            padding: 60px 80px 0;
+        }
+
+        .headline-main {
+            font-size: 96px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            text-align: center;
+            text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+        }
+
+        .headline-sub {
+            font-size: 36px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: 0.01em;
+            line-height: 1.5;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* === PHONE CHASSIS — Dark Titanium === */
+        .phone-container {
+            position: absolute;
+            top: 22%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            /* iPhone 15 Pro proportions approx */
+            width: 620px;
+            height: 1270px;
+        }
+
+        .phone-chassis {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 80px;
+            /* Titanium dark body */
+            background: linear-gradient(145deg, #2a2a2e 0%, #1c1c1f 30%, #141416 60%, #1a1a1d 100%);
+            /* Metallic rim lighting */
+            box-shadow:
+                /* Outer subtle ambient shadow */
+                0 60px 120px rgba(0,0,0,0.7),
+                0 20px 60px rgba(0,0,0,0.5),
+                /* Rim light — top left highlight */
+                inset 0 2px 0 0 rgba(180,185,195,0.35),
+                /* Rim light — left edge */
+                inset 2px 0 0 0 rgba(150,155,165,0.15),
+                /* Rim light — right edge */
+                inset -2px 0 0 0 rgba(130,135,145,0.10),
+                /* Rim light — bottom subtle */
+                inset 0 -2px 0 0 rgba(100,105,115,0.08),
+                /* Inner bezel depth */
+                inset 0 0 0 4px #0e0e10;
+            overflow: hidden;
+        }
+
+        /* Metallic rim highlight band */
+        .phone-chassis::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 81px;
+            background: linear-gradient(165deg, 
+                rgba(200,205,215,0.25) 0%, 
+                rgba(160,165,175,0.08) 15%,
+                transparent 30%,
+                transparent 70%,
+                rgba(100,105,115,0.05) 85%,
+                rgba(140,145,155,0.12) 100%
+            );
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Side button — right (power) */
+        .phone-chassis .btn-power {
+            position: absolute;
+            right: -3px;
+            top: 320px;
+            width: 4px;
+            height: 90px;
+            background: linear-gradient(180deg, #3a3a3e, #28282c, #3a3a3e);
+            border-radius: 0 3px 3px 0;
+            box-shadow: 1px 0 2px rgba(0,0,0,0.4);
+        }
+
+        /* Side buttons — left (volume + silence) */
+        .phone-chassis .btn-silence {
+            position: absolute;
+            left: -3px;
+            top: 230px;
+            width: 4px;
+            height: 36px;
+            background: linear-gradient(180deg, #3a3a3e, #28282c, #3a3a3e);
+            border-radius: 3px 0 0 3px;
+            box-shadow: -1px 0 2px rgba(0,0,0,0.4);
+        }
+        .phone-chassis .btn-volup {
+            position: absolute;
+            left: -3px;
+            top: 310px;
+            width: 4px;
+            height: 70px;
+            background: linear-gradient(180deg, #3a3a3e, #28282c, #3a3a3e);
+            border-radius: 3px 0 0 3px;
+            box-shadow: -1px 0 2px rgba(0,0,0,0.4);
+        }
+        .phone-chassis .btn-voldn {
+            position: absolute;
+            left: -3px;
+            top: 400px;
+            width: 4px;
+            height: 70px;
+            background: linear-gradient(180deg, #3a3a3e, #28282c, #3a3a3e);
+            border-radius: 3px 0 0 3px;
+            box-shadow: -1px 0 2px rgba(0,0,0,0.4);
+        }
+
+        /* Screen bezel area */
+        .phone-screen-bezel {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: 14px;
+            bottom: 14px;
+            border-radius: 66px;
+            background: #000;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Dynamic Island */
+        .dynamic-island {
+            position: absolute;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 160px;
+            height: 46px;
+            background: #000;
+            border-radius: 23px;
+            z-index: 20;
+            box-shadow: 0 0 0 2px rgba(30,30,30,0.5);
+        }
+
+        /* Status bar */
+        .status-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 0 36px 8px;
+            z-index: 15;
+            background: #f8f9ff;
+        }
+        .status-bar .time {
+            font-size: 20px;
+            font-weight: 700;
+            color: #121c2a;
+            letter-spacing: -0.01em;
+        }
+        .status-bar .icons {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .status-bar .icons svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Home indicator */
+        .home-indicator {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 6px;
+            background: rgba(18,28,42,0.25);
+            border-radius: 3px;
+            z-index: 15;
+        }
+
+        /* === SCREEN CONTENT — Replicated Đăng tin UI === */
+        .screen-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #f8f9ff;
+            overflow: hidden;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+
+        .screen-scroll {
+            position: absolute;
+            top: 72px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        /* -- Top Nav inside screen -- */
+        .s-header {
+            background: #ffffff;
+            border-bottom: 1px solid #bdcabe;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .s-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .s-brand .material-symbols-outlined {
+            color: #006a3b;
+            font-size: 22px;
+            font-variation-settings: 'FILL' 1;
+        }
+        .s-brand span.name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #006a3b;
+        }
+        .s-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .s-header-actions .material-symbols-outlined {
+            font-size: 22px;
+            color: #3e4940;
+        }
+        .s-btn-post {
+            font-size: 12px;
+            font-weight: 600;
+            background: #e6eeff;
+            color: #3e4940;
+            padding: 6px 16px;
+            border-radius: 10px;
+            border: 1px solid #bdcabe;
+            opacity: 0.7;
+        }
+
+        /* -- Page header -- */
+        .s-page-header {
+            text-align: center;
+            padding: 24px 20px 12px;
+        }
+        .s-page-header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #121c2a;
+            margin-bottom: 4px;
+        }
+        .s-page-header p {
+            font-size: 12px;
+            color: #3e4940;
+            line-height: 1.5;
+        }
+
+        /* -- Stepper -- */
+        .s-stepper {
+            position: relative;
+            padding: 0 30px;
+            margin: 16px auto;
+            max-width: 420px;
+        }
+        .s-stepper-line {
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            right: 30px;
+            height: 2px;
+            background: #d9e3f6;
+            transform: translateY(-50%);
+        }
+        .s-stepper-progress {
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            height: 2px;
+            background: #006a3b;
+            transform: translateY(-50%);
+            width: 15%;
+        }
+        .s-stepper-dots {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .s-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            background: #f8f9ff;
+            padding: 0 6px;
+        }
+        .s-step-dot {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .s-step-dot.active {
+            background: #10854d;
+            color: #f3fff2;
+            box-shadow: 0 2px 6px rgba(0,106,59,0.2);
+        }
+        .s-step-dot.inactive {
+            background: #d9e3f6;
+            color: #3e4940;
+            border: 1px solid #bdcabe;
+        }
+        .s-step-label {
+            font-size: 10px;
+            font-weight: 500;
+            position: absolute;
+            top: 40px;
+            white-space: nowrap;
+        }
+        .s-step-label.active { color: #006a3b; font-weight: 700; }
+        .s-step-label.inactive { color: #3e4940; }
+
+        /* -- Form card -- */
+        .s-form-card {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #d9e3f6;
+            margin: 28px 16px 16px;
+            padding: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .s-form-card h2 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #121c2a;
+            margin-bottom: 4px;
+        }
+        .s-form-card .s-form-desc {
+            font-size: 12px;
+            color: #3e4940;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        /* -- Drag/drop zone -- */
+        .s-dropzone {
+            border: 2px dashed #bdcabe;
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 28px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .s-dropzone-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #e6eeff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .s-dropzone-icon .material-symbols-outlined {
+            font-size: 26px;
+            color: #006a3b;
+        }
+        .s-dropzone-text {
+            text-align: center;
+        }
+        .s-dropzone-text .cta {
+            font-size: 13px;
+            font-weight: 600;
+            color: #006a3b;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .s-dropzone-text .hint {
+            font-size: 12px;
+            color: #3e4940;
+        }
+        .s-dropzone-format {
+            font-size: 10px;
+            color: #6e7a70;
+            font-weight: 500;
+        }
+
+        /* -- Preview grid -- */
+        .s-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .s-preview-item {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            border: 1px solid #bdcabe;
+            overflow: hidden;
+            position: relative;
+        }
+        .s-preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .s-preview-item .close-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 20px;
+            height: 20px;
+            background: rgba(217,227,246,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .s-preview-item .close-btn .material-symbols-outlined {
+            font-size: 13px;
+            color: #121c2a;
+        }
+        .s-preview-empty {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            border: 1px dashed #bdcabe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9ff;
+        }
+        .s-preview-empty .material-symbols-outlined {
+            font-size: 22px;
+            color: #6e7a70;
+        }
+
+        /* -- Action buttons -- */
+        .s-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 16px;
+            padding: 0 16px 24px;
+        }
+        .s-btn-next {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #10854d;
+            color: #f3fff2;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,106,59,0.15);
+        }
+        .s-btn-next .material-symbols-outlined {
+            font-size: 18px;
+        }
+
+        /* -- Footer inside screen -- */
+        .s-footer {
+            background: #e6eeff;
+            padding: 20px 16px;
+            margin-top: 8px;
+        }
+        .s-footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        .s-footer-brand .material-symbols-outlined {
+            font-size: 18px;
+            color: #006a3b;
+            font-variation-settings: 'FILL' 1;
+        }
+        .s-footer-brand span {
+            font-size: 15px;
+            font-weight: 700;
+            color: #006a3b;
+        }
+        .s-footer p {
+            font-size: 10px;
+            color: #3e4940;
+            margin-top: 4px;
+        }
+        .s-footer-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .s-footer-links a {
+            font-size: 10px;
+            color: #3e4940;
+            text-decoration: none;
+        }
+
+        /* === DECORATIVE ELEMENTS — Subtle floating particles === */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0;
+            animation: float-particle 8s ease-in-out infinite;
+        }
+        .particle-1 {
+            width: 6px; height: 6px;
+            background: rgba(117,219,154,0.2);
+            top: 30%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+        .particle-2 {
+            width: 4px; height: 4px;
+            background: rgba(117,219,154,0.15);
+            top: 55%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        .particle-3 {
+            width: 8px; height: 8px;
+            background: rgba(145,248,180,0.10);
+            top: 70%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+        .particle-4 {
+            width: 5px; height: 5px;
+            background: rgba(117,219,154,0.12);
+            top: 40%;
+            right: 18%;
+            animation-delay: 1s;
+        }
+        .particle-5 {
+            width: 3px; height: 3px;
+            background: rgba(145,248,180,0.18);
+            top: 85%;
+            left: 25%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float-particle {
+            0%, 100% { opacity: 0; transform: translateY(0) scale(1); }
+            25% { opacity: 1; }
+            50% { opacity: 0.7; transform: translateY(-30px) scale(1.3); }
+            75% { opacity: 0.3; }
+        }
+
+        /* === BOTTOM BRANDING === */
+        .bottom-brand {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+        .bottom-brand .logo-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .bottom-brand .logo-row .material-symbols-outlined {
+            font-size: 36px;
+            color: rgba(117,219,154,0.7);
+            font-variation-settings: 'FILL' 1;
+        }
+        .bottom-brand .app-name {
+            font-size: 30px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.02em;
+        }
+        .bottom-brand .tagline {
+            font-size: 22px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.25);
+            letter-spacing: 0.03em;
+        }
+
+        /* Reflection effect under phone */
+        .phone-reflection {
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 160px;
+            background: radial-gradient(ellipse, rgba(16,133,77,0.06) 0%, transparent 70%);
+            z-index: 3;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas">
+        <!-- Background layers -->
+        <div class="canvas-bg"></div>
+        <div class="canvas-grain"></div>
+        <div class="canvas-glow-top"></div>
+        <div class="canvas-glow-phone"></div>
+
+        <!-- Floating particles -->
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+
+        <!-- HEADLINE — Top 20% -->
+        <div class="headline-area">
+            <div class="headline-main">Sống Xanh Mỗi Ngày</div>
+            <div class="headline-sub">Sustainable Exchange</div>
+        </div>
+
+        <!-- PHONE -->
+        <div class="phone-container">
+            <div class="phone-chassis">
+                <!-- Physical buttons -->
+                <div class="btn-power"></div>
+                <div class="btn-silence"></div>
+                <div class="btn-volup"></div>
+                <div class="btn-voldn"></div>
+
+                <!-- Screen bezel -->
+                <div class="phone-screen-bezel">
+                    <!-- Dynamic Island -->
+                    <div class="dynamic-island"></div>
+
+                    <!-- Status Bar -->
+                    <div class="status-bar">
+                        <span class="time">9:41</span>
+                        <div class="icons">
+                            <!-- Signal bars -->
+                            <svg viewBox="0 0 20 20" fill="#121c2a">
+                                <rect x="1" y="14" width="3" height="4" rx="0.5"/>
+                                <rect x="6" y="10" width="3" height="8" rx="0.5"/>
+                                <rect x="11" y="6" width="3" height="12" rx="0.5"/>
+                                <rect x="16" y="2" width="3" height="16" rx="0.5"/>
+                            </svg>
+                            <!-- WiFi -->
+                            <svg viewBox="0 0 20 20" fill="#121c2a">
+                                <path d="M10 15.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+                                <path d="M6.34 11.66a5.16 5.16 0 017.32 0" stroke="#121c2a" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M3.51 8.83a9.16 9.16 0 0112.98 0" stroke="#121c2a" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <!-- Battery -->
+                            <svg viewBox="0 0 28 14" fill="#121c2a">
+                                <rect x="0.5" y="0.5" width="23" height="13" rx="3" stroke="#121c2a" stroke-width="1" fill="none"/>
+                                <rect x="24.5" y="4" width="2.5" height="6" rx="1" fill="#121c2a" opacity="0.4"/>
+                                <rect x="2" y="2" width="18" height="10" rx="1.5" fill="#121c2a"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Home Indicator -->
+                    <div class="home-indicator"></div>
+
+                    <!-- SCREEN CONTENT — Replicated Đăng tin UI -->
+                    <div class="screen-content">
+                        <div class="screen-scroll">
+                            <!-- Top Nav -->
+                            <div class="s-header">
+                                <div class="s-brand">
+                                    <span class="material-symbols-outlined">eco</span>
+                                    <span class="name">Sustainable Exchange</span>
+                                </div>
+                                <div class="s-header-actions">
+                                    <span class="material-symbols-outlined">search</span>
+                                    <div class="s-btn-post">Đăng tin</div>
+                                </div>
+                            </div>
+
+                            <!-- Page Header -->
+                            <div class="s-page-header">
+                                <h1>Đăng tin sản phẩm</h1>
+                                <p>Chia sẻ những món đồ chất lượng, góp phần xây dựng lối sống bền vững.</p>
+                            </div>
+
+                            <!-- Stepper -->
+                            <div class="s-stepper">
+                                <div class="s-stepper-line"></div>
+                                <div class="s-stepper-progress"></div>
+                                <div class="s-stepper-dots">
+                                    <div class="s-step">
+                                        <div class="s-step-dot active">1</div>
+                                        <span class="s-step-label active">Hình ảnh</span>
+                                    </div>
+                                    <div class="s-step">
+                                        <div class="s-step-dot inactive">2</div>
+                                        <span class="s-step-label inactive">Thông tin</span>
+                                    </div>
+                                    <div class="s-step">
+                                        <div class="s-step-dot inactive">3</div>
+                                        <span class="s-step-label inactive">Giá & Tình trạng</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form Card -->
+                            <div class="s-form-card">
+                                <h2>Tải lên hình ảnh</h2>
+                                <p class="s-form-desc">Ảnh chụp rõ nét giúp sản phẩm của bạn thu hút hơn. Tối đa 5 ảnh.</p>
+
+                                <!-- Drop zone -->
+                                <div class="s-dropzone">
+                                    <div class="s-dropzone-icon">
+                                        <span class="material-symbols-outlined">add_photo_alternate</span>
+                                    </div>
+                                    <div class="s-dropzone-text">
+                                        <span class="cta">Nhấn để chọn ảnh</span>
+                                        <span class="hint">hoặc kéo thả vào đây</span>
+                                    </div>
+                                    <span class="s-dropzone-format">Định dạng JPG, PNG. Tối đa 5MB/ảnh.</span>
+                                </div>
+
+                                <!-- Preview grid -->
+                                <div class="s-preview-grid">
+                                    <div class="s-preview-item">
+                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdJo2WuGwl0uve1C6JlaBZwsKoLQ3TmSRFD8--AUL5AbDE5305hun0LSJplCICgLJTkzMtepRox1oPn-aYCgiUa7WxMbWX27MJ_ta985Mh3XUsHKHU6diuwKAhjZclKoeRDdelI3j-aQNOWgUJkB7gwox5dsBWus24c8ijJf3cGsc5Pmvg6gyQ2GiSoJJGC4d4wJy6lyULQDz7TxM_7YyURU39GzRlRCxNghRuezClYS5UeGZ43Chloj1hSZ9-WNLcvd-aaE8S6-Q" alt="Product preview"/>
+                                        <div class="close-btn">
+                                            <span class="material-symbols-outlined">close</span>
+                                        </div>
+                                    </div>
+                                    <div class="s-preview-empty">
+                                        <span class="material-symbols-outlined">add</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="s-actions">
+                                <div class="s-btn-next">
+                                    Tiếp tục
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="s-footer">
+                                <div class="s-footer-brand">
+                                    <span class="material-symbols-outlined">eco</span>
+                                    <span>Sustainable Exchange</span>
+                                </div>
+                                <p>© 2026 Sustainable Exchange. Cam kết vì môi trường.</p>
+                                <div class="s-footer-links">
+                                    <a href="#">Điều khoản sử dụng</a>
+                                    <a href="#">Chính sách bảo mật</a>
+                                    <a href="#">Sứ mệnh bền vững</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reflection under phone -->
+            <div class="phone-reflection"></div>
+        </div>
+
+        <!-- Bottom branding -->
+        <div class="bottom-brand">
+            <div class="logo-row">
+                <span class="material-symbols-outlined">eco</span>
+                <span class="app-name">Sustainable Exchange</span>
+            </div>
+            <div class="tagline">Kết nối giá trị • Bảo vệ môi trường</div>
+        </div>
+    </div>
+</body>
+</html>

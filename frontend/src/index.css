@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-outline-variant/50 rounded-full hover:bg-outline/80 transition-colors;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-on-surface antialiased transition-colors duration-300;
+    margin: 0;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100svh;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Utilities */
+  .glass {
+    @apply bg-surface-container-lowest/70 backdrop-blur-md border border-outline-variant/20 shadow-sm;
+  }
+  .glass-dark {
+    @apply bg-inverse-surface/80 backdrop-blur-md border border-outline-variant/10 shadow-md;
+  }
+  
+  /* Micro-animations */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-lg;
+  }
+  .active-scale {
+    @apply transition-transform duration-150 active:scale-[0.98];
+  }
+  
+  /* Entrance Animations */
+  .fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  .slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

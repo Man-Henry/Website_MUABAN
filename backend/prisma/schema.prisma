@@ -1,0 +1,174 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// User
+// ---------------------------------------------------------------------------
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  password     String
+  displayName  String   @map("display_name")
+  avatar       String?
+  phone        String?
+  bio          String?
+  location     String?
+  refreshToken String?  @map("refresh_token")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  listings      Listing[]
+  reviews       Review[]       @relation("ReviewAuthor")
+  sellerReviews Review[]       @relation("ReviewSeller")
+  conversations ConversationParticipant[]
+  messages      Message[]
+
+  @@map("users")
+}
+
+// ---------------------------------------------------------------------------
+// Listing (Tin đăng sản phẩm)
+// ---------------------------------------------------------------------------
+
+enum ListingCategory {
+  fashion
+  electronics
+  furniture
+  household
+  other
+}
+
+enum ListingCondition {
+  new_item     @map("new")
+  like_new     @map("like-new")
+  good
+  fair
+}
+
+enum ListingStatus {
+  active
+  sold
+  hidden
+}
+
+model Listing {
+  id          String           @id @default(cuid())
+  title       String
+  category    ListingCategory
+  description String
+  price       Float
+  negotiable  Boolean          @default(false)
+  condition   ListingCondition
+  status      ListingStatus    @default(active)
+  sellerId    String           @map("seller_id")
+  createdAt   DateTime         @default(now()) @map("created_at")
+  updatedAt   DateTime         @updatedAt @map("updated_at")
+
+  // Relations
+  seller  User           @relation(fields: [sellerId], references: [id], onDelete: Cascade)
+  images  ListingImage[]
+  reviews Review[]
+
+  @@index([sellerId])
+  @@index([category])
+  @@index([status])
+  @@index([createdAt])
+  @@map("listings")
+}
+
+model ListingImage {
+  id        String  @id @default(cuid())
+  url       String
+  publicId  String? @map("public_id") // Cloudinary public_id for deletion
+  listingId String  @map("listing_id")
+
+  // Relations
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@index([listingId])
+  @@map("listing_images")
+}
+
+// ---------------------------------------------------------------------------
+// Review (Đánh giá)
+// ---------------------------------------------------------------------------
+
+model Review {
+  id         String   @id @default(cuid())
+  listingId  String   @map("listing_id")
+  reviewerId String   @map("reviewer_id")
+  sellerId   String   @map("seller_id")
+  rating     Int      // 1-5
+  comment    String
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  // Relations
+  listing  Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  reviewer User    @relation("ReviewAuthor", fields: [reviewerId], references: [id], onDelete: Cascade)
+  seller   User    @relation("ReviewSeller", fields: [sellerId], references: [id], onDelete: Cascade)
+
+  @@index([listingId])
+  @@index([sellerId])
+  @@map("reviews")
+}
+
+// ---------------------------------------------------------------------------
+// Conversation & Message (Nhắn tin)
+// ---------------------------------------------------------------------------
+
+model Conversation {
+  id             String   @id @default(cuid())
+  listingId      String?  @map("listing_id")
+  listingTitle   String?  @map("listing_title")
+  listingImage   String?  @map("listing_image")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  participants ConversationParticipant[]
+  messages     Message[]
+
+  @@map("conversations")
+}
+
+model ConversationParticipant {
+  id             String   @id @default(cuid())
+  conversationId String   @map("conversation_id")
+  userId         String   @map("user_id")
+  lastReadAt     DateTime @default(now()) @map("last_read_at")
+
+  // Relations
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([conversationId, userId])
+  @@index([userId])
+  @@map("conversation_participants")
+}
+
+model Message {
+  id             String   @id @default(cuid())
+  conversationId String   @map("conversation_id")
+  senderId       String   @map("sender_id")
+  content        String
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Relations
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User         @relation(fields: [senderId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId, createdAt])
+  @@index([senderId])
+  @@map("messages")
+}
