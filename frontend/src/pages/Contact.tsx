@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
         <div className="text-center mb-10">
           <h1 className="text-headline-lg text-on-surface">Liên hệ</h1>
           <p className="mt-2 text-body-md text-on-surface-variant max-w-md mx-auto">
-            Có câu hỏi hoặc cần hỗ trợ? Gửi tin nhắn cho chúng tôi.
+            Có câu hỏi hoặc cần hỗ trợ ? Gửi tin nhắn cho chúng tôi.
           </p>
         </div>
 
