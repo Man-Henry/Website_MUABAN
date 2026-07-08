@@ -18,13 +18,33 @@ export const listingsController = {
 
   async createListing(req: Request, res: Response) {
     const files = (req.files as Express.Multer.File[]) || [];
-    const listing = await listingsService.createListing(req.user!.userId, req.body, files);
+    
+    // Parse values from FormData (which sends everything as strings)
+    const formattedData = {
+      ...req.body,
+      price: req.body.price ? parseFloat(req.body.price) : undefined,
+      negotiable: req.body.negotiable === 'true' || req.body.negotiable === true,
+    };
+
+    const listing = await listingsService.createListing(req.user!.userId, formattedData, files);
     res.status(201).json(listing);
   },
 
   async updateListing(req: Request, res: Response) {
     const files = (req.files as Express.Multer.File[]) || [];
-    const listing = await listingsService.updateListing(req.params.id as string, req.user!.userId, req.body, files);
+    
+    // Parse values from FormData
+    const formattedData = {
+      ...req.body,
+    };
+    if (req.body.price !== undefined) {
+      formattedData.price = parseFloat(req.body.price);
+    }
+    if (req.body.negotiable !== undefined) {
+      formattedData.negotiable = req.body.negotiable === 'true' || req.body.negotiable === true;
+    }
+
+    const listing = await listingsService.updateListing(req.params.id as string, req.user!.userId, formattedData, files);
     res.json(listing);
   },
 
