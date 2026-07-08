@@ -20,12 +20,27 @@ import { listingReviewsRouter, userReviewsRouter } from './modules/reviews/revie
 const app = express();
 
 // ---------------------------------------------------------------------------
-// Global Middleware
+// CORS — Danh sách origin được phép
 // ---------------------------------------------------------------------------
+
+const allowedOrigins = [
+  'https://man-henry.github.io',  // Production (GitHub Pages)
+  'http://localhost:3000',         // Dev (Vite)
+  'http://localhost:3001',
+  'http://127.0.0.1:3000',
+  'http://127.0.0.1:3001',
+];
 
 app.use(helmet());
 app.use(cors({
-  origin: env.CORS_ORIGIN,
+  origin: function (origin, callback) {
+    // Cho phép request không có origin (same-origin, curl, Postman, v.v.)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
 app.use(morgan('dev'));

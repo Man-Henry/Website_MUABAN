@@ -143,9 +143,18 @@ export const getOnlineUserIds = (): string[] => {
  * @param httpServer - HTTP server từ Express
  */
 export const initSocket = async (httpServer: HttpServer): Promise<void> => {
+  const allowedOrigins = [
+    'https://man-henry.github.io',  // Production (GitHub Pages)
+    'http://localhost:3000',         // Dev (Vite)
+    'http://localhost:3001',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:3001',
+  ];
+
   io = new Server(httpServer, {
     cors: {
-      origin: env.CORS_ORIGIN,
+      origin: allowedOrigins,
+      methods: ['GET', 'POST'],
       credentials: true,
     },
     // Ưu tiên WebSocket, fallback sang polling
