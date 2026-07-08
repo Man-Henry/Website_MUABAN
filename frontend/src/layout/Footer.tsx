@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[16px] text-primary">location_on</span>
-                <span>Hà Nội, Việt Nam</span>
+                <span>Việt Nam</span>
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-outline-variant/30">
           <p className="text-label-sm text-on-surface-variant text-center">
-            © 2026 Sustainable Exchange. Cam kết vì môi trường.
+            © 2026 Sustainable Exchange. Chung tay vì môi trường.
           </p>
         </div>
       </div>

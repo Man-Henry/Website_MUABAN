@@ -4,7 +4,7 @@ const Privacy: React.FC = () => (
   <div className="page-enter">
     <div className="mx-auto max-w-3xl px-4 md:px-6 lg:px-8 py-12 md:py-16">
       <h1 className="text-headline-lg text-on-surface mb-2">Chính sách bảo mật</h1>
-      <p className="text-body-sm text-on-surface-variant mb-8">Cập nhật lần cuối: 01/06/2026</p>
+      <p className="text-body-sm text-on-surface-variant mb-8">Cập nhật lần cuối: 19/06/2026</p>
 
       <div className="space-y-6">
         <Section title="Thu thập thông tin">
