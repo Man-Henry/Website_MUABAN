@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import MainLayout from '../layout/MainLayout';
 import ProtectedRoute from './ProtectedRoute';
@@ -27,7 +27,7 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 const AppRouter: React.FC = () => {
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Main layout wrapper */}
@@ -65,7 +65,7 @@ const AppRouter: React.FC = () => {
             </Route>
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </HashRouter>
     </HelmetProvider>
   );
 };

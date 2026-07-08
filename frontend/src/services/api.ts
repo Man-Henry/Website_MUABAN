@@ -177,8 +177,9 @@ api.interceptors.response.use(
       processQueue(refreshError, null);
       clearAccessToken();
 
-      // Chuyển hướng về trang đăng nhập
-      window.location.href = '/dang-nhap';
+      // Chuyển hướng về trang đăng nhập (hỗ trợ cả HashRouter)
+      const base = import.meta.env.BASE_URL || '/';
+      window.location.href = `${base}#/dang-nhap`;
 
       return Promise.reject(refreshError);
     } finally {

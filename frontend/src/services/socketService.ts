@@ -102,7 +102,12 @@ export const connectSocket = (token?: string): void => {
 
   // Khởi tạo kết nối
   // Trong dev mode, Vite proxy sẽ forward /socket.io tới backend
-  socket = io({
+  // Trong production, cần URL tường minh tới backend server
+  const socketUrl = import.meta.env.VITE_API_URL
+    ? import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '')
+    : undefined;
+
+  socket = io(socketUrl, {
     auth: {
       token: accessToken,
     },
