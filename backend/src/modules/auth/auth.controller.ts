@@ -8,8 +8,8 @@ import { env } from '../../config/env.js';
 
 const COOKIE_OPTIONS = {
   httpOnly: true,
-  secure: env.NODE_ENV === 'production',
-  sameSite: 'lax' as const,
+  secure: true,           // Bắt buộc phải là true để chạy trên HTTPS
+  sameSite: 'none' as const, // Cho phép gửi cookie chéo domain (Cross-site)
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 ngày
   path: '/',
 };
