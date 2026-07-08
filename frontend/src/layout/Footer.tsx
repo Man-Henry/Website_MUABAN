@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3 text-body-sm text-on-surface-variant">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[16px] text-primary">mail</span>
-                <span>hello@sustainable.vn</span>
+                <span>tvm19624@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[16px] text-primary">location_on</span>
