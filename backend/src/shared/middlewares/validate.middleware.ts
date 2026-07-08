@@ -31,7 +31,10 @@ export const validateQuery = (schema: ZodSchema) => {
       const message = result.error.issues.map((e: { message: string }) => e.message).join('. ');
       throw new ValidationError(message);
     }
-    req.query = result.data as typeof req.query;
+    // Trong Express 5, req.query là getter (read-only), không thể gán lại bằng dấu =
+    // Thay vào đó, ta sẽ xóa hết thuộc tính cũ và gán lại bằng Object.assign
+    for (const key in req.query) delete req.query[key];
+    Object.assign(req.query, result.data);
     next();
   };
 };
