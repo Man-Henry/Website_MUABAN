@@ -1,0 +1,10 @@
+import{a as e}from"./rolldown-runtime-Cyuzqnbw.js";import{ht as t}from"./deps-C9fbaaQ4.js";import{n}from"./ui-6n5Pz2ge.js";var r=e(t(),1),i=n(),a=(0,r.forwardRef)(({label:e,error:t,helperText:n,required:a,type:o=`text`,className:s=``,id:c,...l},u)=>{let[d,f]=(0,r.useState)(!1),p=o===`password`,m=p?d?`text`:`password`:o,h=c||`input-${e.replace(/\s+/g,`-`).toLowerCase()}`;return(0,i.jsxs)(`div`,{className:`flex flex-col gap-1.5`,children:[(0,i.jsxs)(`label`,{htmlFor:h,className:`text-label-md text-on-surface`,children:[e,a&&(0,i.jsx)(`span`,{className:`text-error ml-0.5`,children:`*`})]}),(0,i.jsxs)(`div`,{className:`relative`,children:[(0,i.jsx)(`input`,{ref:u,id:h,type:m,className:`
+              w-full rounded-xl border bg-surface-container-lowest
+              px-4 py-3 text-body-md text-on-surface
+              placeholder:text-outline
+              transition-all duration-200
+              focus:outline-none focus:ring-2 focus:ring-primary-fixed-dim focus:border-primary
+              ${p?`pr-12`:``}
+              ${t?`border-error ring-1 ring-error/20 focus:ring-error/40 focus:border-error`:`border-outline-variant hover:border-outline`}
+              ${s}
+            `.trim(),"aria-invalid":!!t,"aria-describedby":t?`${h}-error`:n?`${h}-helper`:void 0,...l}),p&&(0,i.jsx)(`button`,{type:`button`,tabIndex:-1,onClick:()=>f(!d),className:`absolute right-3 top-1/2 -translate-y-1/2 p-1 text-on-surface-variant hover:text-on-surface transition-colors rounded-lg hover:bg-surface-container`,"aria-label":d?`Ẩn mật khẩu`:`Hiện mật khẩu`,children:(0,i.jsx)(`span`,{className:`material-symbols-outlined text-[20px]`,children:d?`visibility_off`:`visibility`})})]}),t&&(0,i.jsxs)(`p`,{id:`${h}-error`,className:`flex items-center gap-1 text-label-sm text-error fade-in`,children:[(0,i.jsx)(`span`,{className:`material-symbols-outlined text-[14px]`,children:`error`}),t]}),!t&&n&&(0,i.jsx)(`p`,{id:`${h}-helper`,className:`text-label-sm text-on-surface-variant`,children:n})]})});a.displayName=`Input`;export{a as t};

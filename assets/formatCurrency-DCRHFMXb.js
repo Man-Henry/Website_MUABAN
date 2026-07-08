@@ -1,0 +1,1 @@
+var e=e=>`${new Intl.NumberFormat(`vi-VN`,{style:`decimal`,maximumFractionDigits:0}).format(e)} VNĐ`;export{e as t};
