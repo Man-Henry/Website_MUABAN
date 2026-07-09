@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { useToast } from '../context/ToastContext';
 import { validateEmail, validatePassword, validateDisplayName } from '../utils/validators';
 import Input from '../components/Input';
 import Button from '../components/Button';
@@ -14,6 +15,7 @@ interface AuthProps {
 const Auth: React.FC<AuthProps> = ({ initialTab = 'login' }) => {
   const [activeTab, setActiveTab] = useState<'login' | 'register'>(initialTab);
   const { login, register, isLoading, error, resetError } = useAuth();
+  const { showToast } = useToast();
   const navigate = useNavigate();
   const location = useLocation();
   const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/';
@@ -59,6 +61,7 @@ const Auth: React.FC<AuthProps> = ({ initialTab = 'login' }) => {
     });
 
     if (result.success) {
+      showToast({ type: 'success', message: 'Đăng nhập thành công! Chào mừng bạn trở lại 👋' });
       navigate(from, { replace: true });
     }
   };
@@ -87,6 +90,7 @@ const Auth: React.FC<AuthProps> = ({ initialTab = 'login' }) => {
     });
 
     if (result.success) {
+      showToast({ type: 'success', message: 'Tạo tài khoản thành công! Chào mừng bạn đến với Sustainable Exchange 🌱' });
       navigate(from, { replace: true });
     }
   };
