@@ -125,7 +125,7 @@ const Shop: React.FC = () => {
     <div className="page-enter">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* ===== Page Header ===== */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+        <div data-aos="fade-up" className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div>
             <h1 className="text-headline-md md:text-headline-lg text-on-surface">
               Cửa hàng
@@ -184,7 +184,7 @@ const Shop: React.FC = () => {
 
         {/* ===== Filter Panel ===== */}
         {showFilters && (
-          <div className="mb-8 rounded-2xl border border-outline-variant/20 bg-surface-container-lowest p-6 shadow-sm fade-in">
+          <div data-aos="fade-down" className="mb-8 rounded-2xl border border-outline-variant/20 bg-surface-container-lowest p-6 shadow-sm fade-in">
             <div className="flex items-center justify-between mb-5">
               <h3 className="text-label-md text-on-surface font-semibold">Bộ lọc</h3>
               {activeFilterCount > 0 && (
@@ -283,8 +283,10 @@ const Shop: React.FC = () => {
           <>
             {/* Product grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-              {paginatedListings.map((listing) => (
-                <ListingCard key={listing.id} listing={listing} />
+              {paginatedListings.map((listing, index) => (
+                <div key={listing.id} data-aos="fade-up" data-aos-delay={index < 8 ? index * 80 : 0}>
+                  <ListingCard listing={listing} />
+                </div>
               ))}
             </div>
 

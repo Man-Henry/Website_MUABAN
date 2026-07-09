@@ -30,7 +30,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
       className={`group block rounded-2xl border bg-surface-container-lowest overflow-hidden transition-all duration-300 ease-out ${
         isSold
           ? 'border-outline-variant/10 opacity-80 hover:opacity-100 hover:shadow-lg'
-          : 'border-outline-variant/20 hover:shadow-xl hover:-translate-y-1'
+          : 'border-outline-variant/20 hover:shadow-xl hover:-translate-y-2'
       }`}
     >
       {/* Image */}

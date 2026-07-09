@@ -99,7 +99,7 @@ const Auth: React.FC<AuthProps> = ({ initialTab = 'login' }) => {
     <div className="page-enter flex min-h-[calc(100vh-8rem)] items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         {/* Card */}
-        <div className="rounded-[16px] border border-outline-variant/20 bg-surface-container-lowest shadow-xl overflow-hidden">
+        <div data-aos="zoom-in" className="rounded-[16px] border border-outline-variant/20 bg-surface-container-lowest shadow-xl overflow-hidden">
           {/* ===== Tabs ===== */}
           <div className="flex border-b border-outline-variant/20">
             <button

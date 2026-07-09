@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
     <div className="page-enter">
       <div className="mx-auto max-w-2xl px-4 md:px-6 lg:px-8 py-12 md:py-16">
         {/* Header */}
-        <div className="text-center mb-10">
+        <div data-aos="fade-up" className="text-center mb-10">
           <h1 className="text-headline-lg text-on-surface">Liên hệ</h1>
           <p className="mt-2 text-body-md text-on-surface-variant max-w-md mx-auto">
             Có câu hỏi hoặc cần hỗ trợ ? Gửi tin nhắn cho chúng tôi.
@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Contact info cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        <div data-aos="fade-up" data-aos-delay="100" className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           <InfoCard icon="mail" title="Email" value="support@secondlife.vn" />
           <InfoCard icon="schedule" title="Giờ làm việc" value="8:00 - 18:00 (T2-T7)" />
           <InfoCard icon="location_on" title="Địa chỉ" value="TP. Hồ Chí Minh" />
@@ -46,6 +46,7 @@ const Contact: React.FC = () => {
 
         {/* Contact form */}
         <form
+          data-aos="fade-up" data-aos-delay="200"
           onSubmit={handleSubmit}
           className="rounded-2xl border border-outline-variant/20 bg-surface-container-lowest p-6 md:p-8"
         >
@@ -89,7 +90,7 @@ const Contact: React.FC = () => {
 };
 
 const InfoCard: React.FC<{ icon: string; title: string; value: string }> = ({ icon, title, value }) => (
-  <div className="rounded-xl border border-outline-variant/20 bg-surface-container-lowest p-4 text-center">
+  <div className="rounded-xl border border-outline-variant/20 bg-surface-container-lowest p-4 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
     <span className="material-symbols-outlined text-primary text-[24px] mb-2 block">{icon}</span>
     <p className="text-label-sm text-on-surface-variant">{title}</p>
     <p className="text-body-sm text-on-surface font-medium mt-0.5">{value}</p>

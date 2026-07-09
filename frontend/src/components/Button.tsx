@@ -13,7 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 // ===== Variant Styles Map =====
 const variantStyles: Record<string, string> = {
   primary:
-    'bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary shadow-md hover:shadow-lg active:shadow-sm',
+    'bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary hover:scale-105 shadow-md hover:shadow-lg active:shadow-sm active:scale-100',
   secondary:
     'bg-surface-container text-on-surface hover:bg-surface-container-high active:bg-surface-container-highest',
   outline:

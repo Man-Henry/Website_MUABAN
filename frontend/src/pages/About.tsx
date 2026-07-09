@@ -4,7 +4,7 @@ const About: React.FC = () => (
   <div className="page-enter">
     <div className="mx-auto max-w-3xl px-4 md:px-6 lg:px-8 py-12 md:py-16">
       {/* Hero */}
-      <div className="text-center mb-12">
+      <div data-aos="fade-up" className="text-center mb-12">
         <div className="flex items-center justify-center gap-2 mb-4">
           <span className="material-symbols-outlined text-primary text-[36px]">eco</span>
           <h1 className="text-display-sm text-on-surface">Sustainable Exchange</h1>
@@ -17,25 +17,31 @@ const About: React.FC = () => (
 
       {/* Mission */}
       <div className="space-y-8">
-        <Section
-          icon="target"
-          title="Sứ mệnh"
-          content="Chúng tôi tin rằng mỗi sản phẩm đều xứng đáng có một cuộc đời thứ hai. SecondLife kết nối người mua và người bán, tạo nên một cộng đồng tiêu dùng bền vững, giảm thiểu lãng phí tài nguyên."
-        />
-        <Section
-          icon="visibility"
-          title="Tầm nhìn"
-          content="Trở thành nền tảng hàng đầu Đông Nam Á về giao dịch đồ dùng bền vững, nơi mọi người cùng chung tay xây dựng lối sống xanh."
-        />
-        <Section
-          icon="favorite"
-          title="Giá trị cốt lõi"
-          content="Bền vững — Minh bạch — Cộng đồng — Đổi mới. Chúng tôi đặt môi trường và người dùng làm trung tâm trong mọi quyết định."
-        />
+        <div data-aos="fade-right">
+          <Section
+            icon="target"
+            title="Sứ mệnh"
+            content="Chúng tôi tin rằng mỗi sản phẩm đều xứng đáng có một cuộc đời thứ hai. SecondLife kết nối người mua và người bán, tạo nên một cộng đồng tiêu dùng bền vững, giảm thiểu lãng phí tài nguyên."
+          />
+        </div>
+        <div data-aos="fade-right" data-aos-delay="100">
+          <Section
+            icon="visibility"
+            title="Tầm nhìn"
+            content="Trở thành nền tảng hàng đầu Đông Nam Á về giao dịch đồ dùng bền vững, nơi mọi người cùng chung tay xây dựng lối sống xanh."
+          />
+        </div>
+        <div data-aos="fade-right" data-aos-delay="200">
+          <Section
+            icon="favorite"
+            title="Giá trị cốt lõi"
+            content="Bền vững — Minh bạch — Cộng đồng — Đổi mới. Chúng tôi đặt môi trường và người dùng làm trung tâm trong mọi quyết định."
+          />
+        </div>
       </div>
 
       {/* Stats */}
-      <div className="mt-12 grid grid-cols-3 gap-6 rounded-2xl border border-outline-variant/20 bg-surface-container-lowest p-6 md:p-8">
+      <div data-aos="zoom-in" className="mt-12 grid grid-cols-3 gap-6 rounded-2xl border border-outline-variant/20 bg-surface-container-lowest p-6 md:p-8">
         <StatItem value="10K+" label="Người dùng" />
         <StatItem value="50K+" label="Sản phẩm" />
         <StatItem value="100+" label="Tấn CO₂ giảm" />
