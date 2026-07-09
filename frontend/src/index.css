@@ -53,52 +53,66 @@
 }
 
 .dark {
-  --color-surface-container-highest: #333a47;
-  --color-primary-fixed: #91f8b4;
-  --color-secondary-container: #005238;
-  --color-on-surface-variant: #bfc9bf;
-  --color-tertiary-fixed-dim: #ffb2b6;
-  --color-primary-container: #00522c;
-  --color-primary-fixed-dim: #75db9a;
-  --color-tertiary: #ffb2b6;
+  /* Surfaces: nền tối */
   --color-background: #0f141a;
-  --color-outline-variant: #3e4940;
-  --color-surface-dim: #0f141a;
-  --color-on-surface: #e2e2ea;
-  --color-on-secondary-container: #64f9bc;
-  --color-secondary-fixed: #68fcbf;
-  --color-primary: #75db9a;
-  --color-secondary: #45dfa4;
-  --color-on-secondary-fixed-variant: #005137;
-  --color-on-error-container: #ffb4ab;
-  --color-on-secondary-fixed: #002114;
-  --color-surface-tint: #75db9a;
-  --color-on-primary-container: #75db9a;
-  --color-tertiary-container: #7a2531;
-  --color-surface-variant: #3e4940;
-  --color-surface-container-high: #282f3a;
-  --color-on-tertiary-container: #ffdadb;
-  --color-on-tertiary-fixed: #40000d;
-  --color-on-tertiary-fixed-variant: #802733;
-  --color-inverse-primary: #006a3b;
-  --color-on-error: #690005;
-  --color-on-primary-fixed-variant: #00522c;
-  --color-on-background: #e2e2ea;
-  --color-on-secondary: #003825;
-  --color-inverse-surface: #e2e2ea;
-  --color-surface-container-low: #181c22;
   --color-surface: #0f141a;
-  --color-on-primary: #00391d;
-  --color-tertiary-fixed: #ffdadb;
-  --color-outline: #889389;
-  --color-error: #ffb4ab;
-  --color-inverse-on-surface: #27313f;
-  --color-on-primary-fixed: #00210f;
+  --color-surface-dim: #0f141a;
   --color-surface-bright: #353a41;
   --color-surface-container-lowest: #0a0e14;
+  --color-surface-container-low: #181c22;
   --color-surface-container: #1d2228;
+  --color-surface-container-high: #282f3a;
+  --color-surface-container-highest: #333a47;
+  --color-surface-variant: #3e4940;
+
+  /* Text: chữ sáng */
+  --color-on-surface: #e2e2ea;
+  --color-on-background: #e2e2ea;
+  --color-on-surface-variant: #bfc9bf;
+
+  /* Primary – GIỮ NGUYÊN */
+  --color-primary: #10854d;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #10854d;
+  --color-on-primary-container: #f3fff2;
+  --color-primary-fixed: #91f8b4;
+  --color-primary-fixed-dim: #75db9a;
+  --color-on-primary-fixed: #00210f;
+  --color-on-primary-fixed-variant: #00522c;
+  --color-surface-tint: #75db9a;
+  --color-inverse-primary: #006a3b;
+
+  /* Secondary – GIỮ NGUYÊN */
+  --color-secondary: #006c4b;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #64f9bc;
+  --color-on-secondary-container: #00714e;
+  --color-secondary-fixed: #68fcbf;
   --color-secondary-fixed-dim: #45dfa4;
-  --color-on-tertiary: #5f101d;
+  --color-on-secondary-fixed: #002114;
+  --color-on-secondary-fixed-variant: #005137;
+
+  /* Tertiary – GIỮ NGUYÊN */
+  --color-tertiary: #9b3b46;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ba535d;
+  --color-on-tertiary-container: #fffbfa;
+  --color-tertiary-fixed: #ffdadb;
+  --color-tertiary-fixed-dim: #ffb2b6;
+  --color-on-tertiary-fixed: #40000d;
+  --color-on-tertiary-fixed-variant: #802733;
+
+  /* Error – GIỮ NGUYÊN */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Outline & Inverse */
+  --color-outline: #889389;
+  --color-outline-variant: #4a5a4c;
+  --color-inverse-surface: #e2e2ea;
+  --color-inverse-on-surface: #27313f;
 }
 
 @layer base {
